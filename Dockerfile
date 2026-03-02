@@ -41,7 +41,8 @@ COPY install/ install/
 # Build
 RUN ./hack/build.sh
 
-FROM registry.access.redhat.com/ubi9/ubi:latest
+FROM quay.io/centos/centos:stream9
+RUN yum install util-linux-core -y && yum clean all
 
 WORKDIR /
 COPY --from=builder /workspace/install/ install/

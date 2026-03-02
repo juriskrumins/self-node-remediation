@@ -35,6 +35,10 @@ spec:
                   operator: NotIn
                   values:
                   - "true"
+                - key: remediation.medik8s.io/include-in-remediation
+                  operator: In
+                  values:
+                    - "true"
       hostPID: true
       containers:
       - args:
